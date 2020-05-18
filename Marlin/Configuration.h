@@ -12,7 +12,7 @@
 //#define MachineCR20Pro
 //#define MachineCR10S
 //#define MachineCR10SV2
-//#define MachineCR10SPro // Graphics LCD Requires soldering R64 and R66
+#define MachineCR10SPro // Graphics LCD Requires soldering R64 and R66
 //#define MachineCR10SProV2 // Second Gen 10S Pro with BLTouch wired to Z Max
 //#define MachineCRX
 //#define MachineCRXPro
@@ -44,7 +44,7 @@
    E3D Mounting assumes Groovemount
    Creality Mounting assumes bolt-on kit
 */
-//#define HotendStock
+#define HotendStock
 //#define HotendE3D
 //#define HotendMosquito
 
@@ -74,7 +74,7 @@
    ac bed, leave both disabled
 */
 //#define BedAC
-//#define BedDC
+#define BedDC
 
 //#define SolidBedMounts //Removed a few LCD options to save some memory since not needed with solid mounts
 
@@ -84,7 +84,7 @@
 */
 //#define ABL_EZABL // TH3D EZABL or Any NO Sensor
 //#define ABL_NCSW //Creality ABL or Any NC Sensor
-//#define ABL_BLTOUCH
+#define ABL_BLTOUCH
 //#define ABL_TOUCH_MI // Uncomment ABL_TOUCH_MI to use Touch-MI sensor by hotends.fr
 
 //#define CREALITY_ABL_MOUNT //Using creality ABL mount
@@ -102,7 +102,7 @@
 
 // Touchscreen options - only 32 bit boards have the open serial ports to use with graphics displays above
 //#define ForceCRXDisplay
-//#define Force10SProDisplay
+#define Force10SProDisplay
 
 //#define AddonFilSensor //Adds a filament runout sensor to the CR20 or Ender 4
 //#define lerdgeFilSensor //Using lerdge filament sensor, which is opposite polarity to stock
@@ -124,7 +124,7 @@
    Melzi board users may only select ABL_BI for bilinear leveling
    If a probe is enabled and nothing selected here, defaults to Bilinear
 */
-//#define ABL_BI
+#define ABL_BI
 //#define ABL_UBL
 
 /*
@@ -142,7 +142,7 @@
 //#define OriginalCrealitySquareBoard
 //#define MachineCR10Orig // Forces Melzi board
 //#define Melzi_To_SBoardUpgrade // Upgrade Melzi board to 10S board
-//#define CrealitySilentBoard // Creality board with TMC2208 Standalone drivers. Disables Linear Advance
+#define CrealitySilentBoard // Creality board with TMC2208 Standalone drivers. Disables Linear Advance
 
 //#define SKR13 // 32 bit board - assumes 2208 drivers
 //#define SKR14
@@ -178,7 +178,7 @@
    Standard is recommended in most other scenarios.
 */
 //#define MeshFast
-//#define MeshStd
+#define MeshStd
 //#define MeshFine
 //#define MeshExtreme
 
@@ -272,7 +272,7 @@
 // @section info
 
 // Author info of this build printed to the host during boot and M115
-#define STRING_CONFIG_H_AUTHOR "TinyMachines3D" // Who made the changes.
+#define STRING_CONFIG_H_AUTHOR "Dulus" // Who made the changes.
 #define CUSTOM_VERSION_FILE Version.h // Path from the root directory (no quotes)
 
 /**
@@ -1605,7 +1605,7 @@
      #define NOZZLE_TO_PROBE_OFFSET { -44, -10, 0 }
    #endif
 #elif ANY(MachineCR10SPro, MachineCR10Max) && ENABLED(HotendStock) && DISABLED(MicroswissDirectDrive)
-  #define NOZZLE_TO_PROBE_OFFSET { -27, 0, 0 }
+  #define NOZZLE_TO_PROBE_OFFSET { -37, -5, 0 }
 #elif (ANY(ABL_BLTOUCH, ABL_EZABL,ABL_NCSW) && ENABLED(E3DHemera))
     #define NOZZLE_TO_PROBE_OFFSET { -40, 0, 0 }
 #elif ENABLED(MachineCR10SV2)
@@ -1617,7 +1617,7 @@
 #elif ENABLED(MicroswissDirectDrive) && ENABLED(ABL_BLTOUCH)
   #define NOZZLE_TO_PROBE_OFFSET { -45, -5, 0 }
 #elif (ENABLED(ABL_BLTOUCH) && ENABLED(HotendStock))
-  #define NOZZLE_TO_PROBE_OFFSET { -41, -8, 0 }
+  #define NOZZLE_TO_PROBE_OFFSET { -37, -5, 0 }
 #elif ((ANY(ABL_EZABL, ABL_NCSW)) && ENABLED(HotendStock))
   #if ENABLED(CREALITY_ABL_MOUNT)
     #define NOZZLE_TO_PROBE_OFFSET { -55, -15, 0 }
